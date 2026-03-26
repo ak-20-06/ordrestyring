@@ -30,3 +30,9 @@ Bemærk:
 
 v2 fix:
 - rettet runtime-fejl: Table2 icon var ikke importeret i App.jsx
+
+
+v3 design:
+- helt nyt lysere UI
+- større kort og pænere kalender
+- renere ordrekort og paneler
