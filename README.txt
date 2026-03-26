@@ -36,3 +36,14 @@ v3 design:
 - helt nyt lysere UI
 - større kort og pænere kalender
 - renere ordrekort og paneler
+
+
+v4 ændringer:
+- venstremenu virker nu som rigtige sider/faner
+- startside er nu kun kort + kalender
+- dagsregistrering og timeregistrering har egne sider
+- bruger vælges i timeregistrering
+- nederste lille ugekolonne er fjernet
+- bookede weekenddage er nu røde
+- kalenderfelter viser kunde, opgaven er for og titel
+- nyt felt på ordrer: assigned_to / 'opgaven er for'

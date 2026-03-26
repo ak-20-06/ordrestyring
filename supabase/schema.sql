@@ -67,3 +67,5 @@ create policy "orders_all" on orders for all using (true) with check (true);
 create policy "time_entries_all" on time_entries for all using (true) with check (true);
 create policy "day_notes_all" on day_notes for all using (true) with check (true);
 create policy "ks_files_all" on ks_files for all using (true) with check (true);
+
+alter table orders add column if not exists assigned_to text;
