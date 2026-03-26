@@ -26,3 +26,7 @@ Bemærk:
 - Ingen login endnu
 - Asger og Kasper er faste profiler
 - Hvis Supabase env mangler, vil appen vise en fejl i stedet for hvid side
+
+
+v2 fix:
+- rettet runtime-fejl: Table2 icon var ikke importeret i App.jsx

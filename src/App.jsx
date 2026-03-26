@@ -9,6 +9,7 @@ import {
   ImagePlus,
   MapPin,
   RefreshCw,
+  Table2,
   User,
 } from "lucide-react";
 import { supabase, KS_BUCKET } from "./supabase";
