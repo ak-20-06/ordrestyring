@@ -294,7 +294,7 @@ export default function App() {
     <div className="app-shell">
       <div className="topbar">
         <div className="mobile-brand">
-          <div className="brand-title">Ordrestyring</div>
+          <div className="brand-title">Ordrestyring V5 TEST 123</div>
           <div className="brand-subtitle">Renere version med bedre design</div>
         </div>
         <button className="icon-btn" onClick={() => setMobileMenuOpen((v) => !v)} type="button">
