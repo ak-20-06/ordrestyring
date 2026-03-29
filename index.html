@@ -426,11 +426,12 @@
   }
 
   function openCreateOrderForSelectedDay(){
-    setPage("ordrer");
-    el("orderStartDate").value = state.selectedDate || "";
-    el("orderEndDate").value = state.selectedDate || "";
-    const titleInput = el("orderTitle");
-    if(titleInput) titleInput.focus();
+  setPage("ordrer");
+  el("orderStartDate").value = state.selectedDate || "";
+  el("orderEndDate").value = ""; // 👈 tom i stedet
+  const titleInput = el("orderTitle");
+  if(titleInput) titleInput.focus();
+
   }
   window.openCreateOrderForSelectedDay = openCreateOrderForSelectedDay;
 
