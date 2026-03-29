@@ -74,4 +74,4 @@ alter table public.orders add column if not exists task_list text;
 
 NOTIFY pgrst, 'reload schema';
 
-alter table orders add column if not exists owner_name text;
+
