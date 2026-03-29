@@ -73,3 +73,8 @@ alter table orders add column if not exists memory_list text;
 alter table orders add column if not exists task_list text;
 
 NOTIFY pgrst, 'reload schema';
+
+select column_name
+from information_schema.columns
+where table_name = 'orders'
+order by ordinal_position;
