@@ -69,3 +69,5 @@ create policy "day_notes_all" on day_notes for all using (true) with check (true
 create policy "ks_files_all" on ks_files for all using (true) with check (true);
 
 alter table orders add column if not exists assigned_to text;
+alter table orders add column if not exists memory_list text;
+alter table orders add column if not exists task_list text;
