@@ -68,13 +68,18 @@ create policy "time_entries_all" on time_entries for all using (true) with check
 create policy "day_notes_all" on day_notes for all using (true) with check (true);
 create policy "ks_files_all" on ks_files for all using (true) with check (true);
 
-alter table orders add column if not exists assigned_to text;
-alter table orders add column if not exists memory_list text;
-alter table orders add column if not exists task_list text;
-
-NOTIFY pgrst, 'reload schema';
+select current_database();
 
 select column_name
 from information_schema.columns
-where table_name = 'orders'
+where table_schema = 'public'
+  and table_name = 'orders'
 order by ordinal_position;
+
+alter table public.orders add column if not exists assigned_to text;
+alter table public.orders add column if not exists memory_list text;
+alter table public.orders add column if not exists task_list text;
+
+NOTIFY pgrst, 'reload schema';
+
+select pg_notification_queue_usage();
