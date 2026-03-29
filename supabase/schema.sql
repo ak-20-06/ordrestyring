@@ -50,31 +50,23 @@ insert into profiles (name)
 values ('Asger'), ('Kasper')
 on conflict (name) do nothing;
 
-alter table profiles enable row level security;
-alter table orders enable row level security;
-alter table time_entries enable row level security;
-alter table day_notes enable row level security;
-alter table ks_files enable row level security;
+alter table public.profiles enable row level security;
+alter table public.orders enable row level security;
+alter table public.time_entries enable row level security;
+alter table public.day_notes enable row level security;
+alter table public.ks_files enable row level security;
 
-drop policy if exists "profiles_all" on profiles;
-drop policy if exists "orders_all" on orders;
-drop policy if exists "time_entries_all" on time_entries;
-drop policy if exists "day_notes_all" on day_notes;
-drop policy if exists "ks_files_all" on ks_files;
+drop policy if exists "profiles_all" on public.profiles;
+drop policy if exists "orders_all" on public.orders;
+drop policy if exists "time_entries_all" on public.time_entries;
+drop policy if exists "day_notes_all" on public.day_notes;
+drop policy if exists "ks_files_all" on public.ks_files;
 
-create policy "profiles_all" on profiles for all using (true) with check (true);
-create policy "orders_all" on orders for all using (true) with check (true);
-create policy "time_entries_all" on time_entries for all using (true) with check (true);
-create policy "day_notes_all" on day_notes for all using (true) with check (true);
-create policy "ks_files_all" on ks_files for all using (true) with check (true);
-
-select current_database();
-
-select column_name
-from information_schema.columns
-where table_schema = 'public'
-  and table_name = 'orders'
-order by ordinal_position;
+create policy "profiles_all" on public.profiles for all using (true) with check (true);
+create policy "orders_all" on public.orders for all using (true) with check (true);
+create policy "time_entries_all" on public.time_entries for all using (true) with check (true);
+create policy "day_notes_all" on public.day_notes for all using (true) with check (true);
+create policy "ks_files_all" on public.ks_files for all using (true) with check (true);
 
 alter table public.orders add column if not exists assigned_to text;
 alter table public.orders add column if not exists memory_list text;
@@ -82,4 +74,3 @@ alter table public.orders add column if not exists task_list text;
 
 NOTIFY pgrst, 'reload schema';
 
-select pg_notification_queue_usage();
